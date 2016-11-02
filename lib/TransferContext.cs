@@ -83,6 +83,12 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
             set;
         }
 
+        public ShouldTransferCallback ShouldTransferCallback
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Gets or sets the progress update handler.
         /// </summary>
