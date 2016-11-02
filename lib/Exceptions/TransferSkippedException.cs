@@ -32,15 +32,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
         /// </summary>
         /// <param name="errorMessage">The message that describes the error.</param>
         public TransferSkippedException(string errorMessage)
-            : this(TransferErrorCode.NotOverwriteExistingDestination, errorMessage)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TransferSkippedException" /> class.
-        /// </summary>
-        public TransferSkippedException(TransferErrorCode errorCode, string errorMessage)
-            : base(errorCode, errorMessage)
+            : base(TransferErrorCode.NotOverwriteExistingDestination, errorMessage)
         {
         }
 
@@ -52,7 +44,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
         public TransferSkippedException(string errorMessage, Exception innerException)
             : base(TransferErrorCode.NotOverwriteExistingDestination, errorMessage, innerException)
         {
-        }        
+        }
 
 #if BINARY_SERIALIZATION
         /// <summary>

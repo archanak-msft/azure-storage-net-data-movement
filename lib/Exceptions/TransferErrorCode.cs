@@ -102,11 +102,6 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
         SubTransferFails = 18,
 
         /// <summary>
-        /// User choose not to overwrite existing destination.
-        /// </summary>
-        UserSaidNoToTransfer = 19,
-
-        /// <summary>
         /// Uncategorized transfer error.
         /// </summary>
         Unknown = 32,

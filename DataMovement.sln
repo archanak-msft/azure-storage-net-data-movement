@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMovement", "lib\DataMovement.csproj", "{B821E031-09CC-48F0-BDC6-2793228D4027}"
 EndProject
@@ -14,8 +14,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTestLib", "test\MsTestLib\MsTestLib.csproj", "{AC39B50F-DC27-4411-9ED4-A4A137190ACB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMTestLib", "test\DMTestLib\DMTestLib.csproj", "{2C79E154-EFD2-4FFD-8A73-5A62A61BC6E5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalTest", "LocalTest\LocalTest.csproj", "{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,18 +75,6 @@ Global
 		{2C79E154-EFD2-4FFD-8A73-5A62A61BC6E5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2C79E154-EFD2-4FFD-8A73-5A62A61BC6E5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2C79E154-EFD2-4FFD-8A73-5A62A61BC6E5}.Release|Win32.ActiveCfg = Release|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Debug|Win32.Build.0 = Debug|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Release|Win32.ActiveCfg = Release|Any CPU
-		{4A6363C1-0086-4EF1-99E9-9F70B11E3AD8}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
