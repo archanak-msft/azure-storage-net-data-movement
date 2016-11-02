@@ -334,4 +334,7 @@ MD5 in property: {2}</value>
     <value>{0} sub transfer(s) failed. </value>
     <comment>{0} is the number of failed sub transfers.</comment>
   </data>
+  <data name="ShouldTransferCallbackCancelTransferException" xml:space="preserve">
+    <value>User skipped copying given source to destination.</value>
+  </data>
 </root>

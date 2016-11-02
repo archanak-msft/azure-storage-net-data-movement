@@ -84,6 +84,15 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
         }
 
         /// <summary>
+        /// Gets or sets the callback invoked to tell whether to initaiate transfer.
+        /// </summary>
+        public ShouldTransferCallback ShouldTransferCallback
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets or sets the progress update handler.
         /// </summary>
         public IProgress<TransferStatus> ProgressHandler

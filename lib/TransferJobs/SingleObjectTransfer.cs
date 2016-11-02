@@ -14,6 +14,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
     using System.Threading.Tasks;
     using Microsoft.WindowsAzure.Storage.Blob;
     using Microsoft.WindowsAzure.Storage.File;
+    using System.Globalization;
 
     /// <summary>
     /// Represents a single object transfer operation.
@@ -185,6 +186,9 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
 
             try
             {
+                //this method will raise a TransferSkippedException if callback returns false.
+                InvokeShouldTransferCallback();
+
                 await scheduler.ExecuteJobAsync(this.transferJob, cancellationToken);
                 this.UpdateTransferJobStatus(this.transferJob, TransferJobStatus.Finished);
 
@@ -200,7 +204,7 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
                 eventArgs.EndTime = DateTime.UtcNow;
                 eventArgs.Exception = exception;
 
-                if (exception.ErrorCode == TransferErrorCode.NotOverwriteExistingDestination)
+                if (exception.ErrorCode == TransferErrorCode.NotOverwriteExistingDestination || exception.ErrorCode == TransferErrorCode.UserSaidNoToTransfer)
                 {
                     // transfer skipped
                     this.UpdateTransferJobStatus(this.transferJob, TransferJobStatus.Skipped);
@@ -237,6 +241,15 @@ namespace Microsoft.WindowsAzure.Storage.DataMovement
                 }
 
                 throw;
+            }
+        }
+
+        private void InvokeShouldTransferCallback()
+        {
+            if (null == this.Context || null == this.Context.ShouldTransferCallback || !this.Context.ShouldTransferCallback(this.Source.ToString(), this.Destination.ToString()))
+            {
+                string exceptionMessage = string.Format(CultureInfo.InvariantCulture, Resources.ShouldTransferCallbackCancelTransferException, this.Source, this.Destination);
+                throw new TransferSkippedException(TransferErrorCode.UserSaidNoToTransfer, exceptionMessage);
             }
         }
     }
